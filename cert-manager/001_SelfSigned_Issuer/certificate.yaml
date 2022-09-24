@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: selfsigned-certificate
+  namespace: cert-manager-test
+spec:
+  commonName: test.domain.com
+  issuerRef:
+    kind: Issuer
+    name: test-selfsigned-issuer
+  privateKey: {}
+  secretName: selfsigned-certificate
+  subject:
+    organizations:
+      - test-org
