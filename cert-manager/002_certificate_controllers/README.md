@@ -30,3 +30,16 @@ The controller removes the `nextPrivateKey` secret and the `nextPrivateKeySecret
 
 #### Issuing condition is set to true
 The controller adds the `nextPrivateKey` secret and populates the secret with a new private key. It also updates the certificate resource by adding the `nextPrivateKeySecretName`.
+
+## Issuing controller
+The issuing controller is responsible for the following fields:
+- revision
+- Issuing condition
+
+### Scenarios
+
+#### Issuing condition is set to true
+It increments the revision by 1
+
+#### Issuing condition is true and issuing fails
+The `Issuing` condition is set to `false`
