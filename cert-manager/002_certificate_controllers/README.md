@@ -12,3 +12,21 @@ After some processing, the certificates get generated and they get populated in 
 
 #### Ready is set to true and secret got deleted
 If the secret gets deleted, the `Ready` state will be transitioned from `true` to false. Also, the `notAfter`, `notBefore` and `renewalTime` fields will be unset.
+
+## Trigger Controller
+The only responsibility of the trigger controller is to set the `Issuing` field to `true`
+
+### Scenarios
+#### The secret is not present
+When the secret mentioned by the user is not present, the trigger controller sets the `Issuing` condition to `true`.
+
+## Key Manager controller
+This controller is responsible for managing the `nextPrivateKey` field in the `status` and the `nextPrivateKey` secret.
+
+### Scenarios
+
+#### Issuing condition is set to false
+The controller removes the `nextPrivateKey` secret and the `nextPrivateKeySecret` field in the certificate resource.
+
+#### Issuing condition is set to true
+The controller adds the `nextPrivateKey` secret and populates the secret with a new private key. It also updates the certificate resource by adding the `nextPrivateKeySecretName`.
