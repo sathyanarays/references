@@ -1,3 +1,90 @@
+# States
+
+## State 1
+```
+conditions:
+    ready: Not defined
+    issuing: Not defined
+    nextPrivateKeySecretName: Not defined
+    revision: Not defined
+    notBefore: Not defined
+    notAfter: Not defined
+    renewalTime: Not defined
+```
+
+## State 2
+```
+conditions:
+    ready: false
+    issuing: Not defined
+    nextPrivateKeySecretName: Not defined
+    revision: Not defined
+    notBefore: Not defined
+    notAfter: Not defined
+    renewalTime: Not defined
+```
+
+## State 3
+```
+conditions:
+    ready: false
+    issuing: true
+    nextPrivateKeySecretName: Not defined
+    revision: Not defined
+    notBefore: Not defined
+    notAfter: Not defined
+    renewalTime: Not defined
+```
+
+## State 4
+```
+conditions:
+    ready: false
+    issuing: true
+    nextPrivateKeySecretName: defined
+    revision: Not defined
+    notBefore: Not defined
+    notAfter: Not defined
+    renewalTime: Not defined
+```
+
+## State 5
+```
+conditions:
+    ready: false
+    issuing: false
+    nextPrivateKeySecretName: defined
+    revision: defined
+    notBefore: Not defined
+    notAfter: Not defined
+    renewalTime: Not defined
+```
+
+## State 6
+```
+conditions:
+    ready: true
+    issuing: false
+    nextPrivateKeySecretName: defined
+    revision: defined
+    notBefore: defined
+    notAfter: defined
+    renewalTime: defined
+```
+
+## State 7
+```
+conditions:
+    ready: true
+    issuing: false
+    nextPrivateKeySecretName: Not defined
+    revision: defined
+    notBefore: defined
+    notAfter: defined
+    renewalTime: defined
+```
+
+# Raw Data
 ## Initial State
 
 ```azure
