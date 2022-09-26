@@ -43,3 +43,9 @@ It increments the revision by 1
 
 #### Issuing condition is true and issuing fails
 The `Issuing` condition is set to `false`
+
+#### Issuing is set to true and Certificate Request succeeds
+This controller is responsible for copying the generated certificates to the secrets. Also, the `Issuing` condition is set to `false` with reason `Issued`.
+
+## Certificate Request Controller
+The certificate request controller is responsible for creating the Certificate Request object for the certificate. This happens when the `Issuing` condition is set to `true` and the `nextPrivateKeySecret` is populated with the private key.
