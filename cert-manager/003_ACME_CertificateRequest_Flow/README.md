@@ -342,3 +342,14 @@ The order controller creates set of challenges that needs to be solved for the c
 	}
 }
 ```
+
+### 5. Post Challenge to ACME server
+Using acme client, the challenge controller posts the challenge to acme server
+
+### 6. The ACME solver pod validates challenge
+The acme server calls the ACME solver pod. The conditions are checked and success response is returned if everything is good!
+
+### 7. Challenge controller gets the challenge status from ACME server
+
+### 8. Order controller syncs the secret
+Order controller syncs the secret from the ACME server once all the challenges are solved!
